@@ -1,5 +1,7 @@
 package ru.avalon.java.actions;
 
+import java.io.File;
+
 /**
  * Абстрактное представление о действии, как функциональном
  * элементе приложения.
@@ -17,7 +19,8 @@ public interface Action extends Runnable, AutoCloseable {
         /*
          * TODO №1 Реализуйте метод start интерфейса Action.
          */
-        throw new UnsupportedOperationException("Not implemented yet!");
+        Thread thread = new Thread(this, "createAction");
+        thread.start();
     }
     
 }
